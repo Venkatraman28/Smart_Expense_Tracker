@@ -47,5 +47,4 @@ A full-featured **Smart Expense Tracker** backend built using **Spring Boot**, *
 
 ## 📜 Swagger UI
 
-You can explore all available APIs with request/response examples via Swagger UI:
-
+You can explore all available APIs with request/response examples via Swagger UI: localhost:8080/swagger-ui/index.html#/
