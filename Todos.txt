@@ -1,0 +1,41 @@
+
+-> Set up docker for keycloak - done
+-> Set up data base configuration - done
+-> Create entities - done
+-> Add web security
+-> Enable cors
+-> Add service layer to check api call
+-> Set up angular for keycloak
+
+Request →
+  Spring Security FilterChain →
+    CORS? ✓
+    CSRF? ✗
+    Token Auth via JWT? ✓
+      ↓
+    Custom JwtAuthenticationConverter (extract roles)
+      ↓
+    SecurityContext is populated
+      ↓
+  Your Filter: UserSynchronizerFilter →
+    Reads token → calls UserSynchronizer
+      ↓
+    User data saved to DB
+      ↓
+  Controller Handler is finally executed
+
+
+swagger:
+http://localhost:8080/swagger-ui/index.html#/
+http://localhost:8080/v3/api-docs
+
+Category:
+    -> Service - done
+    -> Controller - done
+
+Transaction:
+    -> Service - done
+    -> Controller - done
+
+Budget
+    -> Service -

@@ -1,0 +1,30 @@
+
+services:
+  keycloak:
+    container_name: keycloak-expense-tracker
+    image: quay.io/keycloak/keycloak:26.0.0
+    ports:
+      - 9000:8080
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: password
+    networks:
+      - expense-tracker
+    command:
+      - "start-dev"
+
+  rabbitmq:
+    container_name: rabbitmq-expense-tracker
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: web
+      RABBITMQ_DEFAULT_PASS: web
+    networks:
+      - expense-tracker
+
+networks:
+  expense-tracker:
+    driver: bridge

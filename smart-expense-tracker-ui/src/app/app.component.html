@@ -1,0 +1,12 @@
+<router-outlet />
+
+<button class="button button-danger" (click)="getAllUsers()">Get User</button>
+
+@if (users.length > 0) {
+  <div class="container">
+    @for (item of users; track item) {
+      <p>{{ item.id }}</p>
+      <p>{{ item.firstName }}</p>
+    }
+  </div>
+}
